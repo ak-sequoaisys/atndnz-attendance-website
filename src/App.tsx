@@ -187,7 +187,7 @@ function App() {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <a href="/office-teams.html" className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200 block">
               <img 
                 src="/team-meeting.jpg" 
                 alt="Professional team meeting in modern office"
@@ -206,9 +206,9 @@ function App() {
                   <span>GPS-based office detection</span>
                 </div>
               </div>
-            </div>
+            </a>
 
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <a href="/remote-teams.html" className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200 block">
               <img 
                 src="/remote-work.jpg" 
                 alt="Person working remotely with laptop"
@@ -227,9 +227,9 @@ function App() {
                   <span>Flexible time tracking</span>
                 </div>
               </div>
-            </div>
+            </a>
 
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <a href="/field-sales.html" className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200 block">
               <img 
                 src="/field-sales.jpg" 
                 alt="Field sales representative working outdoors"
@@ -248,7 +248,7 @@ function App() {
                   <span>Multi-location support</span>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>

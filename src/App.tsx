@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { 
   Smartphone, 
   MapPin, 
@@ -15,7 +16,8 @@ import {
   Star,
   Download,
   ExternalLink,
-  Apple
+  Apple,
+  Menu
 } from 'lucide-react'
 
 function App() {
@@ -29,7 +31,7 @@ function App() {
               <img 
                 src="/atndnz-logo.png" 
                 alt="Atndnz Logo"
-                className="h-24 w-auto"
+                className="h-16 sm:h-20 md:h-24 w-auto"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                   const nextEl = e.currentTarget.nextElementSibling as HTMLElement;
@@ -46,7 +48,9 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className="flex items-center space-x-4">
+            
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-4">
               <a 
                 href="https://atndnz.offrd.co" 
                 target="_blank" 
@@ -94,6 +98,73 @@ function App() {
                   </a>
                 </Button>
               </div>
+            </div>
+
+            {/* Mobile Navigation */}
+            <div className="md:hidden">
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <Menu className="h-6 w-6" />
+                    <span className="sr-only">Open menu</span>
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                  <div className="flex flex-col space-y-4 mt-6">
+                    <a 
+                      href="https://atndnz.offrd.co" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-slate-600 hover:text-slate-800 font-medium text-lg py-2"
+                    >
+                      Login
+                    </a>
+                    <a 
+                      href="https://atndnz.offrd.co" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-slate-600 hover:text-slate-800 font-medium text-lg py-2"
+                    >
+                      Register
+                    </a>
+                    <a 
+                      href="https://www.offrd.co" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-slate-600 hover:text-slate-800 font-medium text-lg py-2 flex items-center space-x-2"
+                    >
+                      <span>Visit Offrd</span>
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                    <div className="pt-4 border-t border-gray-200">
+                      <div className="space-y-3">
+                        <Button asChild className="w-full bg-slate-800 hover:bg-slate-900">
+                          <a 
+                            href="https://play.google.com/store/apps/details?id=com.offrd.atndnz&utm_source=na_Med"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center space-x-2"
+                          >
+                            <Download className="w-4 h-4" />
+                            <span>Google Play</span>
+                          </a>
+                        </Button>
+                        <Button asChild className="w-full bg-slate-800 hover:bg-slate-900">
+                          <a 
+                            href="https://apps.apple.com/us/app/atndnz/id6736938329"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center space-x-2"
+                          >
+                            <Apple className="w-4 h-4" />
+                            <span>App Store</span>
+                          </a>
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </SheetContent>
+              </Sheet>
             </div>
           </div>
         </div>

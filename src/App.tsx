@@ -29,7 +29,7 @@ function App() {
               <img 
                 src="/atndnz-logo.png" 
                 alt="Atndnz Logo"
-                className="h-12 w-auto"
+                className="h-24 w-auto"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                   const nextEl = e.currentTarget.nextElementSibling as HTMLElement;
